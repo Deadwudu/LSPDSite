@@ -217,6 +217,47 @@ body {
   line-height: 1.7;
 }
 
+.service-label {
+  display: block;
+  margin: 0 0 8px;
+  font-weight: 700;
+  color: #0d2f73;
+  font-size: 0.95rem;
+}
+
+.service-select {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 0 18px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #c8d6f5;
+  background: #f7f9ff;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: #111b31;
+}
+
+.service-panel {
+  margin: 0 0 22px;
+}
+
+.service-panel p {
+  margin: 0 0 12px;
+  line-height: 1.65;
+}
+
+.service-note {
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  color: #8a1c1c;
+}
+
+.service-actions {
+  margin-top: 8px;
+}
+
 .actions-row {
   display: grid;
   grid-template-columns: 1fr 1fr;

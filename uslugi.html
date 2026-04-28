@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Услуги | LSPD Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <div class="brand-text">LOS SANTOS POLICE DEPARTMENT MISSON ROW STATION</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero hero-inner">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <p class="hero-kicker">гражданам города</p>
+        <h1>Услуги</h1>
+        <p class="hero-subtitle">
+          Выберите направление ниже, ознакомьтесь с условиями восстановления лицензии и подайте заявление через форму.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container advantages-box">
+        <label class="service-label" for="service-select">Тип услуги</label>
+        <select class="service-select" id="service-select" name="service">
+          <option value="" selected disabled>Выберите услугу</option>
+          <option value="hoo">Восстановление лицензии HOO</option>
+          <option value="drive">Восстановление водительской лицензии</option>
+        </select>
+
+        <div id="service-panel-hoo" class="service-panel" hidden>
+          <p>
+            Лицензия HOO. Для восстановления необходимо на протяжении месяца со дня лишения не получать судимости по тяжким статьям. После чего написать заявление на восстановление лицензии. К заявлению на восстановление прикреплять к документам: справка психолога, нарколога и общую справку из медицинского центра.
+          </p>
+          <p class="service-note">ВОССТАНОВЛЕНИЮ ПОДЛЕЖИТ ЛИШЬ ОДИН РАЗ</p>
+        </div>
+
+        <div id="service-panel-drive" class="service-panel" hidden>
+          <p>
+            Водительская лицензия. Для восстановления необходимо через неделю после лишения написать заявление. К заявлению на восстановление прикреплять к документам: справка психолога, нарколога и общую справку из медицинского центра. Сдать экзамен на вождение и знание правил дорожного движения, после чего вам будет выдана лицензия на вождение. В случае если в течение месяца будет совершено преступление связанное с использованием транспортных средств (угон, попытка скрыться, невыполнение требований), DUI, лицензия будет изъята без права на восстановление.
+          </p>
+        </div>
+
+        <div class="service-actions">
+          <a
+            class="action-btn"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfwdxXFBiDJAtSG2AAP5VhN7HjvQwWS3wMpxNR4EALEefthkQ/viewform?usp=dialog"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Подать заявление
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-main">LSPD Portal - внутренний навигационный сайт</p>
+      <p class="footer-note">накодил psina_nahui</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var select = document.getElementById("service-select");
+      var panelHoo = document.getElementById("service-panel-hoo");
+      var panelDrive = document.getElementById("service-panel-drive");
+
+      function sync() {
+        var v = select.value;
+        panelHoo.hidden = v !== "hoo";
+        panelDrive.hidden = v !== "drive";
+      }
+
+      select.addEventListener("change", sync);
+      sync();
+    })();
+  </script>
+</body>
+</html>
