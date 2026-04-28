@@ -236,10 +236,22 @@ body {
   font-family: inherit;
   font-size: 0.95rem;
   color: #111b31;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+.service-select:focus {
+  outline: none;
+  border-color: #4f83dd;
+  box-shadow: 0 0 0 4px rgba(79, 131, 221, 0.2);
+  transform: translateY(-1px);
 }
 
 .service-panel {
   margin: 0 0 22px;
+  background: #f8fbff;
+  border: 1px solid #d7e4ff;
+  border-radius: 10px;
+  padding: 16px 16px 6px;
 }
 
 .service-panel p {
@@ -247,15 +259,20 @@ body {
   line-height: 1.65;
 }
 
-.service-note {
-  margin: 0;
-  font-weight: 800;
-  letter-spacing: 0.03em;
-  color: #8a1c1c;
+.service-panel-active {
+  animation: panelFadeIn 0.35s ease;
 }
 
-.service-actions {
-  margin-top: 8px;
+@keyframes panelFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .actions-row {

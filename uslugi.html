@@ -23,24 +23,15 @@
         <p class="hero-kicker">гражданам города</p>
         <h1>Услуги</h1>
         <p class="hero-subtitle">
-          Выберите направление ниже, ознакомьтесь с условиями восстановления лицензии и подайте заявление через форму.
+          Выберите направление ниже и ознакомьтесь с условиями получения лицензии.
         </p>
       </div>
     </section>
 
     <section class="section">
       <div class="container advantages-box">
-        <label class="service-label" for="service-select">Тип услуги</label>
-        <select class="service-select" id="service-select" name="service">
-          <option value="" selected disabled>Выберите услугу</option>
-          <option value="drive">Восстановление водительской лицензии</option>
-          <option value="flight">Восстановление летной лицензии</option>
-          <option value="instructor">Восстановление летной лицензии инструктора</option>
-          <option value="hunting">Восстановление лицензии на охоту</option>
-        </select>
-
         <div class="service-panel">
-          <p><strong>Основные требования для восстановления лицензий:</strong></p>
+          <p><strong>Основные требования для получения лицензий:</strong></p>
           <ul class="advantages-list">
             <li>Справка от нарколога.</li>
             <li>Справка от психолога.</li>
@@ -49,55 +40,50 @@
           </ul>
         </div>
 
+        <label class="service-label" for="service-select">Тип услуги</label>
+        <select class="service-select" id="service-select" name="service">
+          <option value="" selected disabled>Выберите услугу</option>
+          <option value="drive">Получение водительской лицензии</option>
+          <option value="flight">Получение летной лицензии</option>
+          <option value="instructor">Получение летной лицензии инструктора</option>
+          <option value="hunting">Получение лицензии на охоту</option>
+        </select>
+
         <div id="service-panel-drive" class="service-panel" hidden>
           <p>
-            Водительская лицензия. Для восстановления необходимо через неделю после лишения
-            написать заявление. К заявлению на восстановление прикрепляются документы:
-            справка от нарколога, справка от психолога и общее заключение терапевта.
+            Водительская лицензия. Для получения необходимо подать заявление и приложить
+            документы: справка от нарколога, справка от психолога и общее заключение терапевта.
             Требование об отсутствии судимостей по тяжким статьям для данной лицензии не применяется.
           </p>
           <p>
             После подачи заявления необходимо сдать экзамен на вождение и знание правил
-            дорожного движения. В случае совершения в течение месяца преступлений, связанных
-            с использованием транспортных средств (угон, попытка скрыться, невыполнение
-            требований), а также DUI, лицензия изымается без права на восстановление.
+            дорожного движения.
           </p>
         </div>
 
         <div id="service-panel-flight" class="service-panel" hidden>
           <p>
-            Летная лицензия. Для восстановления необходимо выждать установленный срок после лишения,
-            подготовить обязательные медицинские документы и подать заявление.
-            После одобрения требуется повторная аттестация по теории и практическим навыкам пилотирования.
+            Летная лицензия. Для получения необходимо подготовить обязательные медицинские
+            документы и подать заявление. После одобрения требуется аттестация по теории
+            и практическим навыкам пилотирования.
           </p>
         </div>
 
         <div id="service-panel-instructor" class="service-panel" hidden>
           <p>
-            Летная лицензия инструктора. Для восстановления необходимо подтвердить соответствие
+            Летная лицензия инструктора. Для получения необходимо подтвердить соответствие
             базовым требованиям, приложить полный пакет медицинских документов и подать заявление.
-            После рассмотрения необходимо пройти дополнительную проверку квалификации инструктора
+            После рассмотрения нужно пройти дополнительную проверку квалификации инструктора
             и подтвердить навыки обучения.
           </p>
         </div>
 
         <div id="service-panel-hunting" class="service-panel" hidden>
           <p>
-            Лицензия на охоту. Для восстановления необходимо подать заявление и приложить
+            Лицензия на охоту. Для получения необходимо подать заявление и приложить
             обязательные медицинские документы. После одобрения возможно назначение
             дополнительной проверки по правилам безопасного обращения и действующим нормам охоты.
           </p>
-        </div>
-
-        <div class="service-actions">
-          <a
-            class="action-btn"
-            href="https://docs.google.com/forms/d/e/1FAIpQLSfwdxXFBiDJAtSG2AAP5VhN7HjvQwWS3wMpxNR4EALEefthkQ/viewform?usp=dialog"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Подать заявление
-          </a>
         </div>
       </div>
     </section>
@@ -124,6 +110,10 @@
         panelFlight.hidden = v !== "flight";
         panelInstructor.hidden = v !== "instructor";
         panelHunting.hidden = v !== "hunting";
+        panelDrive.classList.toggle("service-panel-active", v === "drive");
+        panelFlight.classList.toggle("service-panel-active", v === "flight");
+        panelInstructor.classList.toggle("service-panel-active", v === "instructor");
+        panelHunting.classList.toggle("service-panel-active", v === "hunting");
       }
 
       select.addEventListener("change", sync);
