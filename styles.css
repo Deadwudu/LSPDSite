@@ -217,6 +217,30 @@ body {
   line-height: 1.7;
 }
 
+.pricing-age-note {
+  margin: 12px 0 0;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #eef4ff;
+  border: 1px solid #d7e4ff;
+  line-height: 1.65;
+}
+
+.service-panel .price-list {
+  margin: 0 0 18px;
+  padding-left: 22px;
+  line-height: 1.65;
+}
+
+.price-list li {
+  margin-bottom: 8px;
+}
+
+.price-list li span {
+  font-weight: 700;
+  color: #0d2f73;
+}
+
 .service-label {
   display: block;
   margin: 0 0 8px;
@@ -227,7 +251,7 @@ body {
 
 .service-select {
   width: 100%;
-  max-width: 520px;
+  max-width: min(720px, 100%);
   margin: 0 0 18px;
   padding: 12px 14px;
   border-radius: 10px;
