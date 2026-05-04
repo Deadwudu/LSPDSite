@@ -258,6 +258,223 @@ a.brand-text:hover {
   background-image: url("images/ride-along-card.png");
 }
 
+.card-6 {
+  background-image: url("https://images.unsplash.com/photo-1560250589-ffd3c8b0109d?auto=format&fit=crop&w=1200&q=80");
+}
+
+.hero.hero-honor .hero-overlay {
+  background:
+    radial-gradient(circle at 78% 18%, rgba(242, 183, 5, 0.2), transparent 46%),
+    radial-gradient(circle at 50% 32%, rgba(37, 93, 191, 0.32), transparent 58%);
+}
+
+.section-honor {
+  padding-top: 36px;
+  background:
+    linear-gradient(180deg, #eef3ff 0%, #f2f6ff 22%, #f7f9ff 50%, #f2f6ff 100%);
+}
+
+.honor-intro {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 36px;
+}
+
+.honor-intro-badge {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 7px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(242, 183, 5, 0.65);
+  background: linear-gradient(180deg, rgba(255, 252, 235, 0.95), rgba(242, 183, 5, 0.14));
+  color: #6a5200;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.honor-intro-text {
+  margin: 0;
+  line-height: 1.65;
+  color: #2a3f66;
+  font-size: 0.98rem;
+}
+
+.honor-board-grid {
+  display: grid;
+  gap: 20px;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+/* Единый размер портрета; блок текста не выше фото (лишнее — прокрутка) */
+.honor-card {
+  --honor-photo-w: 188px;
+  --honor-photo-h: 236px;
+
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--honor-photo-w) 1fr;
+  gap: 20px 26px;
+  align-items: start;
+  padding: 22px 24px 22px 20px;
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #d5e0fb;
+  box-shadow:
+    0 10px 32px rgba(7, 29, 74, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  overflow: hidden;
+}
+
+.honor-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: linear-gradient(180deg, var(--gold) 0%, #d99a00 40%, var(--accent) 100%);
+}
+
+.honor-card-photo-wrap {
+  position: relative;
+  z-index: 1;
+  width: var(--honor-photo-w);
+  height: var(--honor-photo-h);
+  flex-shrink: 0;
+}
+
+.honor-card-photo-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(47, 112, 207, 0.25);
+  background: #e8eefc;
+}
+
+.honor-card-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.honor-card-photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  border: 2px dashed rgba(47, 112, 207, 0.45);
+  background: linear-gradient(145deg, #e8eefc 0%, #dce6fb 45%, #cfd9f5 100%);
+  color: #5a6d94;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.honor-card-text {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  height: var(--honor-photo-h);
+  max-height: var(--honor-photo-h);
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  padding: 4px 6px 2px 0;
+}
+
+.honor-star {
+  display: inline-block;
+  margin-right: 6px;
+  color: var(--gold);
+  font-size: 0.85em;
+  text-shadow: 0 0 12px rgba(242, 183, 5, 0.45);
+  vertical-align: middle;
+}
+
+.honor-card-name {
+  margin: 0 0 6px;
+  font-size: clamp(1.12rem, 2.4vw, 1.65rem);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  line-height: 1.12;
+  text-transform: uppercase;
+  color: #0d2f73;
+}
+
+.honor-card-rank {
+  margin: 0 0 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #1f66d1;
+}
+
+.honor-card-note {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: #4a5d82;
+  font-weight: 500;
+}
+
+.honor-card-bio {
+  margin: 0;
+  min-height: 0;
+}
+
+.honor-card-bio p {
+  margin: 0 0 0.55em;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: #4a5d82;
+  font-weight: 500;
+}
+
+.honor-card-bio p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  .honor-card {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    padding: 20px 18px;
+  }
+
+  .honor-card-photo-wrap {
+    width: min(188px, 100%);
+    aspect-ratio: 188 / 236;
+    height: auto;
+  }
+
+  .honor-card-text {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    overflow: visible;
+    justify-content: flex-start;
+    padding-right: 0;
+  }
+
+  .honor-card-name {
+    letter-spacing: 0.05em;
+  }
+}
+
 .section-contacts {
   padding-top: 12px;
 }
@@ -452,9 +669,9 @@ a.brand-text:hover {
   opacity: 0.92;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 880px) {
   .cards-grid {
-    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
