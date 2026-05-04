@@ -694,6 +694,13 @@ a.brand-text:hover {
   opacity: 0.92;
 }
 
+.footer-server {
+  margin: 8px 0 0;
+  font-size: 0.58rem;
+  line-height: 1.35;
+  opacity: 0.82;
+}
+
 @media (max-width: 880px) {
   .cards-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
