@@ -301,11 +301,24 @@ a.brand-text:hover {
     linear-gradient(180deg, #eef3ff 0%, #f2f6ff 22%, #f7f9ff 50%, #f2f6ff 100%);
 }
 
+.section-honor .container {
+  width: min(1240px, 95%);
+}
+
 .honor-board-grid {
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
-  max-width: 920px;
+  max-width: 100%;
   margin: 0 auto;
+}
+
+/* Нечётное число карточек: последняя по центру, ширина как у одной колонки */
+.honor-board-grid > .honor-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  width: 100%;
+  max-width: calc((100% - 20px) / 2);
+  justify-self: center;
 }
 
 /* Единый размер портрета; блок текста не выше фото (лишнее — прокрутка) */
@@ -445,6 +458,18 @@ a.brand-text:hover {
 
 .honor-card-bio p:last-child {
   margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  .honor-board-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .honor-board-grid > .honor-card:last-child:nth-child(odd) {
+    grid-column: auto;
+    max-width: none;
+    justify-self: stretch;
+  }
 }
 
 @media (max-width: 640px) {
