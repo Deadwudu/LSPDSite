@@ -125,10 +125,10 @@ a.brand-text:hover {
 
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px;
-  margin: 0 -6px;
-  padding: 10px 6px;
+  /* не задавать горизонтальные margin — иначе перебивается margin: 0 auto у .container на том же элементе */
+  padding: 10px 0;
   overflow: visible;
 }
 
@@ -252,6 +252,10 @@ a.brand-text:hover {
 
 .card-4 {
   background-image: url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80");
+}
+
+.card-5 {
+  background-image: url("https://images.unsplash.com/photo-1543718591-74bbe6dd31c8?auto=format&fit=crop&w=1200&q=80");
 }
 
 .section-contacts {
@@ -395,6 +399,11 @@ a.brand-text:hover {
   gap: 12px;
 }
 
+.actions-row-single {
+  grid-template-columns: minmax(200px, 400px);
+  justify-content: center;
+}
+
 .action-btn {
   display: inline-flex;
   align-items: center;
@@ -443,7 +452,7 @@ a.brand-text:hover {
   opacity: 0.92;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1100px) {
   .cards-grid {
     grid-template-columns: repeat(2, minmax(220px, 1fr));
   }
