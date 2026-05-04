@@ -123,6 +123,26 @@ a.brand-text:hover {
   padding-top: 4px;
 }
 
+.cards-stars-heading {
+  margin: 0 0 20px;
+  text-align: center;
+  font-size: clamp(0.95rem, 2.4vw, 1.35rem);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #0d2f73;
+}
+
+.cards-stars-heading::after {
+  content: "";
+  display: block;
+  width: min(200px, 40%);
+  height: 3px;
+  margin: 12px auto 0;
+  border-radius: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), var(--accent), var(--gold), transparent);
+}
+
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
