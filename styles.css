@@ -285,8 +285,8 @@ a.brand-text:hover {
 }
 
 .card-6 {
-  background-image: url("images/card-best-employees.jpg");
-  background-position: center 35%;
+  background-image: url("images/card-best-employees.png");
+  background-position: center center;
 }
 
 .hero.hero-honor .hero-overlay {
