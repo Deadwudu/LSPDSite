@@ -314,12 +314,8 @@ a.brand-text:hover {
 
 .actions-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
-}
-
-.actions-row .action-btn-wide {
-  grid-column: 1 / -1;
 }
 
 .action-btn {
@@ -398,6 +394,12 @@ a.brand-text:hover {
   }
 
   .actions-row {
-    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .actions-row .action-btn {
+    font-size: clamp(0.62rem, 2.4vw, 0.82rem);
+    padding: 10px 6px;
+    min-height: 48px;
   }
 }
